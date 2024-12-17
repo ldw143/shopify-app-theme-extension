@@ -7,8 +7,39 @@ embedded = true
 handle = "fractional-quantities-app"
 
 [access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-use_legacy_install_flow = true
+scopes = "unauthenticated_read_product_tags,
+unauthenticated_read_product_listings,
+unauthenticated_read_product_inventory,
+unauthenticated_read_metaobjects,
+unauthenticated_read_checkouts,
+unauthenticated_write_checkouts,
+read_validations,
+write_validations,
+read_themes,
+write_themes,
+read_script_tags,
+write_script_tags,
+read_product_listings,
+read_order_edits,
+write_order_edits,
+read_metaobjects,
+write_metaobjects,
+read_metaobject_definitions,
+write_metaobject_definitions,
+read_locations,
+read_inventory,
+write_inventory,
+read_draft_orders,
+write_draft_orders,
+read_cart_transforms,
+read_audit_events,
+read_products,
+write_products,
+read_fulfillments,
+write_orders,
+read_orders,
+read_checkouts,
+write_checkouts"
 
 [auth]
 redirect_urls = [

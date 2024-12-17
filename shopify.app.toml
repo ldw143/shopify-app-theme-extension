@@ -1,9 +1,10 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "Quiz Testing"
-client_id = "3d722ad8d318fca27ec47c75a4a9b445"
-application_url = "https://product-quiz-template-example--development.gadget.app/api/shopify/install-or-render"
+name = "Fractional Quantities App"
+client_id = "b0f24e4a1f57de5988006853622cf678"
+application_url = "https://fractional-quantities-app-production-copy--development.gadget.app/api/shopify/install-or-render"
 embedded = true
+handle = "fractional-quantities-app"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
@@ -11,16 +12,16 @@ use_legacy_install_flow = true
 
 [auth]
 redirect_urls = [
-  "https://product-quiz-template-example--development.gadget.app/api/connections/auth/shopify/callback"
+  "https://fractional-quantities-app-production-copy--development.gadget.app/api/connections/auth/shopify/callback"
 ]
 
 [webhooks]
 api_version = "2024-10"
 
   [webhooks.privacy_compliance]
-  customer_deletion_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
-  customer_data_request_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
-  shop_deletion_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
+  customer_deletion_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
+  customer_data_request_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
+  shop_deletion_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
 
 [pos]
 embedded = false

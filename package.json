@@ -1,25 +1,28 @@
 {
-  "name": "luxury-growth-app",
-  "version": "1.0.0",
+  "name": "fractional-quantities-app-production-copy",
+  "version": "0.1.0",
   "license": "UNLICENSED",
   "scripts": {
-    "shopify": "shopify",
-    "build": "shopify app build",
-    "dev": "shopify app dev",
-    "info": "shopify app info",
-    "generate": "shopify app generate",
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview",
     "deploy": "shopify app deploy"
   },
   "dependencies": {
-    "@shopify/app": "3.50.2",
-    "@shopify/cli": "3.50.2"
+    "@gadgetinc/react": "^0.18.3",
+    "@gadgetinc/react-shopify-app-bridge": "^0.16.6",
+    "@shopify/app-bridge-react": "^4.1.5",
+    "@shopify/polaris": "^13.8.0",
+    "@shopify/polaris-icons": "^9.3.0",
+    "@tanstack/react-query": "^5.62.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.15.0"
   },
-  "trustedDependencies": [
-    "@shopify/plugin-cloudflare"
-  ],
-  "author": "nricher",
-  "private": true,
-  "workspaces": [
-    "extensions/*"
-  ]
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "3.2.0",
+    "vite": "^5.3.5"
+  }, 
+  "author": "springwater-tech",
+  "private": true
 }

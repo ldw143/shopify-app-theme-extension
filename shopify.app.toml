@@ -1,26 +1,110 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "Quiz Testing"
-client_id = "3d722ad8d318fca27ec47c75a4a9b445"
-application_url = "https://product-quiz-template-example--development.gadget.app/api/shopify/install-or-render"
+name = "Fractional Quantities App"
+client_id = "b0f24e4a1f57de5988006853622cf678"
+application_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/shopify/install-or-render"
 embedded = true
+handle = "fractional-quantities-app"
 
 [access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-use_legacy_install_flow = true
+scopes = "unauthenticated_read_product_tags,
+unauthenticated_read_product_listings,
+unauthenticated_read_product_inventory,
+unauthenticated_read_metaobjects,
+unauthenticated_read_checkouts,
+unauthenticated_write_checkouts,
+read_validations,
+write_validations,
+read_themes,
+write_themes,
+read_script_tags,
+write_script_tags,
+read_product_listings,
+read_order_edits,
+write_order_edits,
+read_metaobjects,
+write_metaobjects,
+read_metaobject_definitions,
+write_metaobject_definitions,
+read_locations,
+read_inventory,
+write_inventory,
+read_draft_orders,
+write_draft_orders,
+read_cart_transforms,
+read_audit_events,
+read_products,
+write_products,
+read_fulfillments,
+write_orders,
+read_orders,
+read_checkouts,
+write_checkouts"
 
 [auth]
 redirect_urls = [
-  "https://product-quiz-template-example--development.gadget.app/api/connections/auth/shopify/callback"
+  "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/connections/auth/shopify/callback"
 ]
 
 [webhooks]
 api_version = "2024-10"
 
+  [[webhooks.subscriptions]]
+  topics = [ "shop/update,
+    app/uninstalled,
+    products/create,
+    products/update,
+    products/delete,
+    draft_orders/create,
+    draft_orders/update,
+    draft_orders/delete,
+    inventory_items/create,
+    inventory_items/update,
+    inventory_items/delete,
+    inventory_levels/connect,
+    inventory_levels/update,
+    inventory_levels/disconnect,
+    themes/create,
+    themes/update,
+    themes/delete,
+    domains/create,
+    domains/update,
+    domains/destroy,
+    bulk_operations/finish,
+    app_purchases_one_time/update,
+    app_subscriptions/update,
+    carts/create,
+    carts/update,
+    fulfillment_events/create,
+    fulfillment_events/delete,
+    order_transactions/create,
+    orders/cancelled,
+    orders/edited,
+    orders/fulfilled,
+    orders/partially_fulfilled,
+    product_listings/add,
+    product_listings/remove,
+    product_listings/update,
+    themes/publish,
+    variants/in_stock,
+    variants/out_of_stock,
+    returns/cancel,
+    returns/close,
+    returns/reopen,
+    product_feeds/create,
+    product_feeds/update,
+    audit_events/admin_api_activity,
+    orders/shopify_protect_eligibility_changed,
+    metaobjects/create,
+    metaobjects/update,
+    metaobjects/delete,
+    app/scopes_update" ]
+  uri = "/webhooks"
+
   [webhooks.privacy_compliance]
-  customer_deletion_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
-  customer_data_request_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
-  shop_deletion_url = "https://product-quiz-template-example--development.gadget.app/api/webhooks/shopify"
+  customer_deletion_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
+  customer_data_request_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
+  shop_deletion_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
 
 [pos]
 embedded = false

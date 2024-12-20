@@ -2,7 +2,7 @@
 
 name = "Fractional Quantities App"
 client_id = "b0f24e4a1f57de5988006853622cf678"
-application_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/shopify/install-or-render"
+application_url = "https://fractional-quantities-app-production-copy.gadget.app/api/shopify/install-or-render"
 embedded = true
 handle = "fractional-quantities-app"
 
@@ -43,7 +43,7 @@ write_checkouts"
 
 [auth]
 redirect_urls = [
-  "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/connections/auth/shopify/callback"
+  "https://fractional-quantities-app-production-copy.gadget.app/api/connections/auth/shopify/callback"
 ]
 
 [webhooks]
@@ -102,9 +102,9 @@ api_version = "2024-10"
   uri = "/webhooks"
 
   [webhooks.privacy_compliance]
-  customer_deletion_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
-  customer_data_request_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
-  shop_deletion_url = "https://shopify-app-theme-extension-gamma.vercel.app/shopify/api/webhooks/shopify"
+  customer_deletion_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
+  customer_data_request_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
+  shop_deletion_url = "https://fractional-quantities-app-production-copy.gadget.app/api/webhooks/shopify"
 
 [pos]
 embedded = false

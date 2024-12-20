@@ -15,14 +15,15 @@
     "@shopify/polaris": "^13.8.0",
     "@shopify/polaris-icons": "^9.3.0",
     "@tanstack/react-query": "^5.62.7",
+    "@urql/core": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.15.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react-swc": "3.2.0",
-    "vite": "^5.3.5"
-  }, 
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "vite": "^6.0.3"
+  },
   "author": "springwater-tech",
   "private": true
 }

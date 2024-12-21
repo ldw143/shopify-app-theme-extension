@@ -9,13 +9,14 @@
     "deploy": "shopify app deploy"
   },
   "dependencies": {
-    "@gadgetinc/react": "^0.18.3",
+    "@gadgetinc/react": "^0.18.5",
     "@gadgetinc/react-shopify-app-bridge": "^0.16.6",
     "@shopify/app-bridge-react": "^4.1.5",
     "@shopify/polaris": "^13.8.0",
     "@shopify/polaris-icons": "^9.3.0",
     "@tanstack/react-query": "^5.62.7",
     "@urql/core": "^5.0.0",
+    "graphql": "^16.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.15.0"

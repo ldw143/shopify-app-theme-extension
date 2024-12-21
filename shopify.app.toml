@@ -39,6 +39,7 @@ read_fulfillments,
 write_orders,
 read_orders,
 read_checkouts,
+read_online_store_pages,
 write_checkouts"
 
 [auth]

@@ -1,8 +1,14 @@
-<div class="quantity-selector">
-  <label for="quantity">Quantity:</label>
-  <select id="quantity" name="quantity">
-    {% for i in (1..10) %}
-      <option value="{{ i }}">{{ i }}</option>
-    {% endfor %}
-  </select>
+<div id="inventory-section">
+  <h2>Quantity</h2>
+  <div id="inventory-container">
+    <!-- Dropdowns will be dynamically rendered by JavaScript -->
+  </div>
 </div>
+
+<!-- Link CSS and JS -->
+<link rel="stylesheet" href="{{ 'section-inventory.css' | asset_url }}" media="print" onload="this.media='all'">
+<script src="{{ 'section-inventory.js' | asset_url }}" defer="defer"></script>
+
+<noscript>
+  <p>This feature requires JavaScript to function properly.</p>
+</noscript>

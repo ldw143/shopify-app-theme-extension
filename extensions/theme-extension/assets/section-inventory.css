@@ -1,23 +1,18 @@
 #inventory-section {
-  margin: 20px;
-  font-family: Arial, sans-serif;
+  margin: 20px 0;
 }
 
-.quantity-selector {
-  margin-bottom: 20px;
+#inventory-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.quantity-selector label {
-  font-weight: bold;
-  margin-right: 10px;
+#inventory-container select {
+  padding: 5px 10px;
+  font-size: 16px;
 }
 
-.quantity-selector select {
-  padding: 5px;
-  font-size: 14px;
-}
-
-.quantity-selector .fraction-label {
-  font-style: italic;
+#inventory-container select:nth-child(2n) {
   margin-left: 10px;
 }

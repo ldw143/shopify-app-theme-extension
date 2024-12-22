@@ -1,0 +1,23 @@
+#inventory-section {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.quantity-selector {
+  margin-bottom: 20px;
+}
+
+.quantity-selector label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quantity-selector select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.quantity-selector .fraction-label {
+  font-style: italic;
+  margin-left: 10px;
+}

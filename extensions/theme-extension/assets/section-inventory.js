@@ -1,15 +1,16 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const environment = "{{ request.host }}".includes("dev") ? "development" : "production";
+const DEV_API_ENDPOINT = "https://fractional-quantities-app-production-copy--development.gadget.app/api/graphql";
+const PROD_API_ENDPOINT = "https://fractional-quantities-app-production-copy.gadget.app/api/graphql";
 
-    const gadgetClient = new Gadget.Client({
-      endpoint: `https://your-app-name--${environment}.gadget.app/graphql`,
-    });
+// Dynamically determine API endpoint
+const API_ENDPOINT =
+  window.location.hostname.includes("development") ||
+  window.location.hostname.includes("localhost")
+    ? DEV_API_ENDPOINT
+    : PROD_API_ENDPOINT;
 
-    const productId = "{{ product.id }}"; // Shopify product ID from Liquid
-    const response = await gadgetClient.query(
-      `
-      query GetInventory($id: ID!) {
+async function fetchInventory(productId) {
+  const query = `
+    query GetProductInventory($id: ID!) {
         product(id: $id) {
           variants {
             id
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             inventoryQuantity
           }
           allow_fractions
+          title
         }
       }
       `,

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     : "https://fractional-quantities-app-production-copy.gadget.app/api/graphql";
 
   const query = `
-    query GetProductInventory($id: ID!) {
+    query ($id: ID!) {
         product(id: $id) {
           variants {
             id
@@ -32,53 +32,102 @@ document.addEventListener("DOMContentLoaded", async () => {
       { id: productId }
     );
 
-    const { variants, allow_fractions } = response.data.product;
-    const inventoryContainer = document.getElementById("inventory-container");
+   // Fetch product data from the API
+  async function fetchProductData(productId) {
+    try {
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query,
+          variables: { id: productId },
+        }),
+      });
 
+      const { data, errors } = await response.json();
+
+      if (errors) {
+        console.error("GraphQL query errors:", errors);
+        return null;
+      }
+
+      return data?.shopifyProduct;
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+      return null;
+    }
+  }
+
+  // Render dropdowns dynamically
+  function renderDropdowns(product) {
+    if (!product || !product.variants || product.variants.length === 0) {
+      inventoryContainer.innerHTML = "<p>No availability.</p>";
+      return;
+    }
+
+    const productTitle = product.title;
+    const variants = product.variants;
+
+    // Clear existing content
+    inventoryContainer.innerHTML = `<h2>${productTitle}</h2>`;
+
+    // Iterate through variants and create dropdowns
     variants.forEach((variant) => {
-      const variantElement = document.createElement("div");
-      variantElement.className = "quantity-selector";
+      const { id, title, inventoryQuantity, allow_fractions } = variant;
 
-      // Create a label for the variant
-      const label = document.createElement("label");
-      label.htmlFor = `quantity-${variant.id}`;
-      label.textContent = `${variant.title}:`;
-      variantElement.appendChild(label);
+      // Create wrapper for the variant dropdowns
+      const variantContainer = document.createElement("div");
+      variantContainer.className = "variant-container";
 
-      // Create dropdown for whole quantities
-      const wholeSelect = document.createElement("select");
-      wholeSelect.id = `quantity-${variant.id}`;
-      wholeSelect.name = `quantity-${variant.id}`;
-      for (let i = 1; i <= Math.min(variant.inventoryQuantity, 10); i++) {
+      // Add variant title
+      const variantTitle = document.createElement("h3");
+      variantTitle.textContent = title;
+
+      // Whole number dropdown
+      const wholeDropdown = document.createElement("select");
+      wholeDropdown.className = "whole-dropdown";
+      wholeDropdown.setAttribute("data-variant-id", id);
+
+      for (let i = 1; i <= inventoryQuantity; i++) {
         const option = document.createElement("option");
         option.value = i;
         option.textContent = i;
-        wholeSelect.appendChild(option);
+        wholeDropdown.appendChild(option);
       }
-      variantElement.appendChild(wholeSelect);
 
-      // Conditionally add fractional quantities
-      if (allow_fractions) {
-        const fractionLabel = document.createElement("span");
-        fractionLabel.textContent = " (Fractional quantities)";
-        fractionLabel.className = "fraction-label";
-        variantElement.appendChild(fractionLabel);
+      // Append whole number dropdown
+      variantContainer.appendChild(variantTitle);
+      variantContainer.appendChild(wholeDropdown);
 
-        const fractionSelect = document.createElement("select");
-        fractionSelect.id = `fraction-${variant.id}`;
-        fractionSelect.name = `fraction-${variant.id}`;
-        [0.25, 0.5, 0.75].forEach((fraction) => {
+      // Conditional fractional dropdown
+      if (allowFractions) {
+        const fractionDropdown = document.createElement("select");
+        fractionDropdown.className = "fraction-dropdown";
+        fractionDropdown.setAttribute("data-variant-id", id);
+
+        ["1/4", "1/2", "3/4"].forEach((fraction) => {
           const option = document.createElement("option");
           option.value = fraction;
-          option.textContent = `+${fraction}`;
-          fractionSelect.appendChild(option);
+          option.textContent = fraction;
+          fractionDropdown.appendChild(option);
         });
-        variantElement.appendChild(fractionSelect);
+
+        // Append fractional dropdown
+        variantContainer.appendChild(fractionDropdown);
       }
 
-      inventoryContainer.appendChild(variantElement);
+      // Append the variant container to the inventory container
+      inventoryContainer.appendChild(variantContainer);
     });
-  } catch (error) {
-    console.error("Error fetching inventory data:", error);
+  }
+
+  // Main execution flow
+  const productData = await fetchProductData(productId);
+  if (productData) {
+    renderDropdowns(productData);
+  } else {
+    inventoryContainer.innerHTML = "<p>Failed to load product inventory.</p>";
   }
 });

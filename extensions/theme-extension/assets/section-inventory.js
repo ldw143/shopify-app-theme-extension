@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // Determine the environment dynamically
-  const environment = window.location.hostname.includes("development") || window.location.hostname.includes("localhost");
+  const isDevelopment = window.location.hostname.includes("localhost") || window.location.hostname.includes("development");
+  const apiEndpoint = isDevelopment
     ? "https://fractional-quantities-app-production-copy--development.gadget.app/api/graphql"
     : "https://fractional-quantities-app-production-copy.gadget.app/api/graphql";
 

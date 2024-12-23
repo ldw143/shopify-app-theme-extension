@@ -1,14 +1,20 @@
-const DEV_API_ENDPOINT = "https://fractional-quantities-app-production-copy--development.gadget.app/api/graphql";
-const PROD_API_ENDPOINT = "https://fractional-quantities-app-production-copy.gadget.app/api/graphql";
+document.addEventListener("DOMContentLoaded", async () => {
+  const inventoryContainer = document.getElementById("inventory-container");
 
-// Dynamically determine API endpoint
-const API_ENDPOINT =
-  window.location.hostname.includes("development") ||
-  window.location.hostname.includes("localhost")
-    ? DEV_API_ENDPOINT
-    : PROD_API_ENDPOINT;
+  // Ensure the product ID is retrieved from the DOM
+  const productId = inventoryContainer.dataset.productId;
+  if (!productId) {
+    console.error("Error: Missing product ID in inventory container.");
+    inventoryContainer.textContent =
+      "Unable to load inventory. Please contact support.";
+    return;
+  }
 
-async function fetchInventory(productId) {
+  // Determine the environment dynamically
+  const environment = window.location.hostname.includes("development") || window.location.hostname.includes("localhost");
+    ? "https://fractional-quantities-app-production-copy--development.gadget.app/api/graphql"
+    : "https://fractional-quantities-app-production-copy.gadget.app/api/graphql";
+
   const query = `
     query GetProductInventory($id: ID!) {
         product(id: $id) {

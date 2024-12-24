@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       variantContainer.appendChild(wholeDropdown);
 
       // Conditional fractional dropdown
-      if (allowFractions) {
+      if (allow_fractions) {
         const fractionDropdown = document.createElement("select");
         fractionDropdown.className = "fraction-dropdown";
         fractionDropdown.setAttribute("data-variant-id", id);

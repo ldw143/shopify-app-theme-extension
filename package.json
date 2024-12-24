@@ -14,6 +14,7 @@
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@gadgetinc/react": "^0.18.5",
     "@gadgetinc/react-shopify-app-bridge": "^0.16.6",
+    "@rollup/plugin-terser": "^0.4.4",
     "@shopify/app-bridge-react": "^4.1.5",
     "@shopify/polaris": "^13.8.0",
     "@shopify/polaris-icons": "^9.3.0",
@@ -24,7 +25,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "6.15.0",
     "react-scripts": "^5.0.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "workbox-webpack-plugin": "^7.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.7.2",

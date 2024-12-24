@@ -15,19 +15,12 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "type": "firefox",
+      "type": "chrome",
       "request": "launch",
-      "name": "Launch Firefox Against localhost",
+      "name": "Launch Chrome Against localhost",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
-      "pathMappings": [
-        {
-          "url": "webpack:///",
-          "path": "${workspaceFolder}/"
-        }
-      ],
-      "sourceMaps": true,
-      "firefoxExecutable": "/path/to/your/firefox" // Optional if Firefox is in PATH
+      "sourceMaps": true
     }
   ]
 }

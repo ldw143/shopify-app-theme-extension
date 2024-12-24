@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "start": "vite preview",
-    "deploy": "shopify app deploy"
+    "deploy": "shopify app deploy",
+    "scripts-start": "react-scripts start",
+    "debug": "react-scripts --inspect-brk=0.0.0.0:9229 start"
+
   },
   "dependencies": {
     "@babel/core": "^7.26.0",

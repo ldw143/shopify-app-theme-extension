@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return null;
       }
 
-      return data?.shopifyProduct;
+      return data?.product;
     } catch (error) {
       console.error("Error fetching product data:", error);
       return null;

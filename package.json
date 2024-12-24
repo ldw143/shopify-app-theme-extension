@@ -9,7 +9,6 @@
     "deploy": "shopify app deploy",
     "scripts-start": "react-scripts start",
     "debug": "react-scripts --inspect-brk=0.0.0.0:9229 start"
-
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -21,7 +20,7 @@
     "@shopify/app-bridge-react": "^4.1.5",
     "@shopify/polaris": "^13.8.0",
     "@shopify/polaris-icons": "^9.3.0",
-    "@tanstack/react-query": "^5.62.7",
+    "@tanstack/react-query": "^5.62.9",
     "@urql/core": "^5.0.0",
     "graphql": "^16.10.0",
     "react": "^18.2.0",

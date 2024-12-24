@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Ensure the product ID is retrieved from the DOM
   const productId = inventoryContainer.dataset.productId;
+
+  const blockSettings = inventoryContainer?.dataset; // Assuming settings are stored as data attributes
+  console.log("Block is loading with these settings:", blockSettings);
+
   if (!productId) {
     console.error("Error: Missing product ID in inventory container.");
     inventoryContainer.textContent =
@@ -123,10 +127,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // Main execution flow
+  try {
+    console.log("Fetching product data for ID:", productId);
+
   const productData = await fetchProductData(productId);
   if (productData) {
+
+    console.log("Product data fetched successfully:", productData);
+    
     renderDropdowns(productData);
   } else {
     inventoryContainer.innerHTML = "<p>Failed to load product inventory.</p>";
+ 
+  }
+} catch (error) {
+  console.error("Failed to initialize block:", error);
+
   }
 });

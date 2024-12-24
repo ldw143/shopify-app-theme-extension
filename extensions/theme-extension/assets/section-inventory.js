@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
       `
-    );
+    ;
 
    // Fetch product data from the API
   async function fetchProductData(productId) {

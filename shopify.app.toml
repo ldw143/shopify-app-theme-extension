@@ -7,7 +7,8 @@ embedded = true
 handle = "fractional-quantities-app"
 
 [access_scopes]
-scopes = "unauthenticated_read_product_tags,
+scopes = """
+unauthenticated_read_product_tags,
 unauthenticated_read_product_listings,
 unauthenticated_read_product_inventory,
 unauthenticated_read_metaobjects,
@@ -40,7 +41,8 @@ write_orders,
 read_orders,
 read_checkouts,
 read_online_store_pages,
-write_checkouts"
+write_checkouts
+"""
 
 [auth]
 redirect_urls = [

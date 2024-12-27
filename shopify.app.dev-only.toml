@@ -1,0 +1,16 @@
+client_id = "d0a63a73b4cc07a21c6053601d5eb491"
+name = "Fractions App"
+application_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/shopify/install-or-render"
+embedded = true
+
+[build]
+# Gadget manages all your scopes, webhooks and api versioning for your app
+# As such, this line should not be changed unless you are working with
+# Shopify managed installations. Read more at https://docs.gadget.dev/guides/plugins/shopify/shopify-app-toml
+include_config_on_deploy = false
+
+[auth]
+redirect_urls = ["https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/connections/auth/shopify/callback"]
+
+[webhooks]
+api_version = "2024-10"

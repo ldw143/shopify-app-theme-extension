@@ -53,7 +53,8 @@ redirect_urls = [
 api_version = "2024-10"
 
   [[webhooks.subscriptions]]
-  topics = [ "shop/update,
+  topics = [ """
+    shop/update,
     app/uninstalled,
     products/create,
     products/update,
@@ -101,7 +102,8 @@ api_version = "2024-10"
     metaobjects/create,
     metaobjects/update,
     metaobjects/delete,
-    app/scopes_update" ]
+    app/scopes_update
+    """ ]
   uri = "/webhooks"
 
   [webhooks.privacy_compliance]

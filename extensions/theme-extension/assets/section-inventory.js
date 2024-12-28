@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const inventoryContainer = document.getElementById("inventory-container");
 
   // Ensure the product ID is retrieved from the DOM
-  const productId = inventoryContainer.dataset.productId;
+  const productId = inventoryContainer.getAttribute('data-product-id');
 
   const blockSettings = inventoryContainer?.dataset; // Assuming settings are stored as data attributes
   console.log("Block is loading with these settings:", blockSettings);

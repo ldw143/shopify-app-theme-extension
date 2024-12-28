@@ -7,6 +7,7 @@ embedded = true
 handle = "fractional-quantities-app"
 
 [access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = """
 unauthenticated_read_product_tags,
 unauthenticated_read_product_listings,
@@ -53,7 +54,8 @@ redirect_urls = [
 api_version = "2024-10"
 
   [[webhooks.subscriptions]]
-  topics = [ """
+  topics = [
+    """
     shop/update,
     app/uninstalled,
     products/create,
@@ -103,7 +105,8 @@ api_version = "2024-10"
     metaobjects/update,
     metaobjects/delete,
     app/scopes_update
-    """ ]
+    """
+    ]
   uri = "/webhooks"
 
   [webhooks.privacy_compliance]
@@ -116,3 +119,4 @@ embedded = false
 
 [build]
 dev_store_url = "quickstart-b6a50718.myshopify.com"
+include_config_on_deploy = true

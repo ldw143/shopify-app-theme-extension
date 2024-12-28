@@ -6,6 +6,9 @@ application_url = "https://fractional-quantities-app-production-copy.gadget.app/
 embedded = true
 handle = "fractional-quantities-app"
 
+[app]
+url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app"
+
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = """

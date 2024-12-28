@@ -8,7 +8,9 @@
     "start": "vite preview",
     "deploy": "shopify app deploy",
     "scripts-start": "react-scripts start",
-    "debug": "react-scripts --inspect-brk=0.0.0.0:9229 start"
+    "debug": "react-scripts --inspect-brk=0.0.0.0:9229 start",
+    "dev-envrmnt": "SHOPIFY_ENV=development shopify app dev --config=shopify.app.dev.toml",
+    "prod": "SHOPIFY_ENV=production shopify app dev --config=shopify.app.toml"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",

@@ -103,10 +103,7 @@ api_version = "2024-10"
     ]
   uri = "/webhooks"
 
-  filters = [
-    "namespace": { "equals": "basic_fabric" },
-    "key": { "equals": "basic_fabric" }    
-  ]
+  filter = "namespace:basic_fabric AND key:basic_fabric"
 
   [webhooks.privacy_compliance]
   customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"

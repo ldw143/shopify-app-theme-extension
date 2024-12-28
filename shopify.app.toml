@@ -6,7 +6,6 @@ application_url = "https://fractional-quantities-app-production-copy.gadget.app/
 embedded = true
 handle = "fractional-quantities-app"
 
-[app]
 url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app"
 
 [access_scopes]

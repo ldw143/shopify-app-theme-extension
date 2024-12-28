@@ -95,13 +95,18 @@ api_version = "2024-10"
     "product_feeds/create",
     "product_feeds/update",
     "audit_events/admin_api_activity",
-    "orders/shopify_protect_eligibility_changed",
+ #   "orders/shopify_protect_eligibility_changed",
     "metaobjects/create",
     "metaobjects/update",
     "metaobjects/delete",
     "app/scopes_update"
     ]
   uri = "/webhooks"
+
+  filters = {
+    "namespace": { "equals": "basic_fabric" },
+    "key": { "equals": "basic_fabric" }    
+  }
 
   [webhooks.privacy_compliance]
   customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"

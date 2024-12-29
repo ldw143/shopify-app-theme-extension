@@ -40,7 +40,8 @@ write_orders,
 read_orders,
 read_checkouts,
 read_online_store_pages,
-write_checkouts
+write_checkouts,
+write_publications
 """
 
 [auth]

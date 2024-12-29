@@ -96,30 +96,28 @@ api_version = "2024-10"
     "product_feeds/update",
     "orders/shopify_protect_eligibility_changed",
     "app/scopes_update"
-    ]
-    uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks"    
+  ]
+  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks"
 
-[[webhooks.subscriptions]]
+  [[webhooks.subscriptions]]
   topic = "metaobjects/create"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-create"
 
-[[webhooks.subscriptions]]
+  [[webhooks.subscriptions]]
   topic = "metaobjects/update"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-update"
 
-[[webhooks.subscriptions]]
+  [[webhooks.subscriptions]]
   topic = "metaobjects/delete"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-delete"
 
-
-
-  [webhooks.privacy_compliance]
-  customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
-  customer_data_request_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
-  shop_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
+[webhooks.privacy_compliance]
+customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
+customer_data_request_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
+shop_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
 
 [pos]
 embedded = false

@@ -104,17 +104,20 @@ redirect_urls = ["https://fractional-quantities-app-production-copy--dev-only.ga
   topic = "metaobjects/create"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-create"
+  api_version = "2024-10"
 
   [[webhooks.subscriptions]]
   topic = "metaobjects/update"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-update"
+  api_version = "2024-10"
 
   [[webhooks.subscriptions]]
   topic = "metaobjects/delete"
   filter = "namespace:basic_fabric AND key:basic_fabric"
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-delete"
-
+  api_version = "2024-10"
+  
 [webhooks.privacy_compliance]
 customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
 customer_data_request_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"

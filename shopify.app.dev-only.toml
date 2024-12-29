@@ -46,8 +46,8 @@ write_checkouts
 [auth]
 redirect_urls = ["https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/connections/auth/shopify/callback"]
 
-[webhooks]
-api_version = "2024-10"
+#[webhooks]
+#api_version = "2024-10"
 
   [[webhooks.subscriptions]]
   topics = [
@@ -98,6 +98,7 @@ api_version = "2024-10"
     "app/scopes_update"
   ]
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks"
+  api_version = "2024-10"
 
   [[webhooks.subscriptions]]
   topic = "metaobjects/create"

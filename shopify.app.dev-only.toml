@@ -36,7 +36,7 @@ read_themes,
 #write_inventory,
 #write_orders,
 write_products,
-#write_publications,
+write_publications,
 #write_script_tags,
 write_themes,
 #write_validations

@@ -6,6 +6,10 @@ embedded = true
 name = "Fractions App"
 handle = "fractions-app"
 
+[build]
+dev_store_url = "quickstart-b6a50718.myshopify.com"
+include_config_on_deploy = true
+
 [webhooks]
 api_version = "2024-10"
 
@@ -20,8 +24,3 @@ redirect_urls = [
 
 [pos]
 embedded = false
-
-[build]
-include_config_on_deploy = true
-dev_store_url = "quickstart-b6a50718.myshopify.com"
-update_urls = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/shopify/update"

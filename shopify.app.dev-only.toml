@@ -9,6 +9,7 @@ handle = "fractions-app"
 [build]
 dev_store_url = "quickstart-b6a50718.myshopify.com"
 include_config_on_deploy = true
+update_urls = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/shopify/update"
 
 [webhooks]
 api_version = "2024-10"

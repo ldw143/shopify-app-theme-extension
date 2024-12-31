@@ -30,13 +30,13 @@ scopes = """
 #read_validations,
 #unauthenticated_read_checkouts,
 #unauthenticated_read_metaobjects,
-#unauthenticated_read_product_inventory,
-#unauthenticated_read_product_listings,
+unauthenticated_read_product_inventory,
+unauthenticated_read_product_listings,
 #unauthenticated_read_product_tags,
 #write_inventory,
 #write_orders,
 #write_products,
-#write_publications,
+write_publications,
 #write_script_tags,
 #write_themes,
 #write_validations
@@ -83,7 +83,7 @@ api_version = "2024-10"
  # "orders/updated",
  # "products/create",
  # "products/delete",
- # "products/update",
+  "products/update",
  # "shop/update",
  # "themes/create",
  # "themes/delete",
@@ -156,8 +156,8 @@ api_version = "2024-10"
   "shop/redact",
 #  "tender_transactions/create",
 #  "themes/publish",
-#  "variants/in_stock",
-#  "variants/out_of_stock"
+  "variants/in_stock",
+  "variants/out_of_stock"
   ]
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks"
   api_version = "2024-10"

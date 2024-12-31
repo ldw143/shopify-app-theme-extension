@@ -1,0 +1,18 @@
+#inventory-section {
+  margin: 20px 0;
+}
+
+#inventory-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#inventory-container select {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+#inventory-container select:nth-child(2n) {
+  margin-left: 10px;
+}

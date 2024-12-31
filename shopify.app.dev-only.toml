@@ -1,195 +1,27 @@
-name = "Fractions App"
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
 client_id = "d0a63a73b4cc07a21c6053601d5eb491"
 application_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/shopify/install-or-render"
 embedded = true
+name = "Fractions App"
 handle = "fractions-app"
-
-[access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = """
-#read_assigned_fulfillment_orders,
-#read_audit_events,
-#read_cart_transforms,
-#read_checkouts,
-#read_draft_orders,
-read_files,
-read_fulfillments,
-#read_inventory,
-#read_locations,
-#read_marketplace_fulfillment_orders,
-#read_merchant_managed_fulfillment_orders,
-read_metaobject_definitions,
-read_metaobjects,
-#read_online_store_pages,
-#read_order_edits,
-#read_orders,
-read_product_listings,
-read_products,
-#read_publications,
-read_script_tags,
-read_themes,
-#read_validations,
-#unauthenticated_read_checkouts,
-#unauthenticated_read_metaobjects,
-#unauthenticated_read_product_inventory,
-#unauthenticated_read_product_listings,
-#unauthenticated_read_product_tags,
-#write_inventory,
-#write_orders,
-write_products,
-#write_publications,
-write_script_tags,
-write_themes,
-#write_validations
-"""
-
-[auth]
-redirect_urls = ["https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/connections/auth/shopify/callback"]
 
 [webhooks]
 api_version = "2024-10"
 
   [[webhooks.subscriptions]]
-  topics = [
-  "app/uninstalled",
-  "bulk_operations/finish",
- # "checkouts/create",
- # "checkouts/delete",
- # "checkouts/update",
-  "collections/create",
-  "collections/delete",
-  "collections/update",
-  "domains/create",
-  "domains/destroy",
-  "domains/update",
- # "draft_orders/create",
- # "draft_orders/delete",
- # "draft_orders/update",
- # "fulfillments/create",
- # "fulfillments/update",
- # "inventory_items/create",
- # "inventory_items/delete",
- # "inventory_items/update",
- # "inventory_levels/connect",
- # "inventory_levels/disconnect",
- # "inventory_levels/update",
- # "locations/activate",
- # "locations/create",
- # "locations/deactivate",
- # "locations/delete",
- # "locations/update",
- # "orders/create",
- # "orders/delete",
- # "orders/risk_assessment_changed",
- # "orders/updated",
-  "products/create",
-  "products/delete",
-  "products/update",
-  "shop/update",
-  "themes/create",
-  "themes/delete",
-  "themes/update",
-  #conditional webhooks
-  "app/scopes_update",
-  "app_purchases_one_time/update",
-  "app_subscriptions/approaching_capped_amount",
-  "app_subscriptions/update",
-#  "audit_events/admin_api_activity",
-#  "carts/create",
-#  "carts/update",
-#  "channels/delete",
-#  "collection_listings/add",
-#  "collection_listings/remove",
-#  "collection_listings/update",
-#  "collection_publications/create",
-#  "collection_publications/delete",
-#  "collection_publications/update",
-  "customers/data_request",
-  "customers/redact",
-#  "fulfillment_events/create",
-#  "fulfillment_events/delete",
-#  "fulfillment_orders/cancellation_request_accepted",
-#  "fulfillment_orders/cancellation_request_rejected",
-#  "fulfillment_orders/cancellation_request_submitted",
-#  "fulfillment_orders/cancelled",
-#  "fulfillment_orders/fulfillment_request_accepted",
-#  "fulfillment_orders/fulfillment_request_rejected",
-#  "fulfillment_orders/fulfillment_request_submitted",
-#  "fulfillment_orders/fulfillment_service_failed_to_complete",
-#  "fulfillment_orders/hold_released",
-#  "fulfillment_orders/line_items_prepared_for_local_delivery",
-#  "fulfillment_orders/line_items_prepared_for_pickup",
-#  "fulfillment_orders/merged",
-#  "fulfillment_orders/moved",
-#  "fulfillment_orders/order_routing_complete",
-#  "fulfillment_orders/placed_on_hold",
-#  "fulfillment_orders/rescheduled",
-#  "fulfillment_orders/scheduled_fulfillment_order_ready",
-#  "fulfillment_orders/split",
-#  "order_transactions/create",
-#  "orders/cancelled",
-#  "orders/edited",
-#  "orders/fulfilled",
-#  "orders/paid",
-#  "orders/partially_fulfilled",
-#  "orders/shopify_protect_eligibility_changed",
-#  "product_feeds/create",
-#  "product_feeds/full_sync",
-#  "product_feeds/incremental_sync",
-#  "product_feeds/update",
-#  "product_listings/add",
-#  "product_listings/remove",
-#  "product_listings/update",
-#  "product_publications/create",
-#  "product_publications/delete",
-#  "product_publications/update",
-#  "publications/delete",
-#  "refunds/create",
-#  "returns/cancel",
-#  "returns/close",
-#  "returns/reopen",
-#  "scheduled_product_listings/add",
-#  "scheduled_product_listings/remove",
-#  "scheduled_product_listings/update",
-  "selling_plan_groups/create",
-  "selling_plan_groups/delete",
-  "selling_plan_groups/update",
-  "shop/redact",
-#  "tender_transactions/create",
-  "themes/publish",
-  "variants/in_stock",
-  "variants/out_of_stock"
-  ]
-  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks"
-  api_version = "2024-10"
+  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
 
-  [[webhooks.subscriptions]]
-  topic = "metaobjects/create"
-  filter = "namespace:basic_fabric AND key:basic_fabric"
-  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-create"
-  api_version = "2024-10"
-
-  [[webhooks.subscriptions]]
-  topic = "metaobjects/update"
-  filter = "namespace:basic_fabric AND key:basic_fabric"
-  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-update"
-  api_version = "2024-10"
-
-  [[webhooks.subscriptions]]
-  topic = "metaobjects/delete"
-  filter = "namespace:basic_fabric AND key:basic_fabric"
-  uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/webhooks/metaobject-delete"
-  api_version = "2024-10"
-
-[webhooks.privacy_compliance]
-customer_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
-customer_data_request_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
-shop_deletion_url = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
+[auth]
+redirect_urls = [
+  "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/connections/auth/shopify/callback"
+]
 
 [pos]
 embedded = false
 
 [build]
-dev_store_url = "quickstart-b6a50718.myshopify.com"
 include_config_on_deploy = true
+dev_store_url = "quickstart-b6a50718.myshopify.com"
 update_urls = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/shopify/update"

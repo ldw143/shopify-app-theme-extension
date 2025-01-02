@@ -8,7 +8,8 @@
         <div class="dropdown-block">
           <label for="quantity-dropdown-{{ block.id }}">{{ block.settings.label }}</label>
           <select id="quantity-dropdown-{{ block.id }}" name="quantity">
-            {% for option in block.settings.options | split: ',' %}
+            {% assign options = block.settings.options | split: ',' %}
+            {% for option in options %}
               <option value="{{ option | strip }}">{{ option | strip }}</option>
             {% endfor %}
           </select>

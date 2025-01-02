@@ -8,24 +8,42 @@
   {% endif %}
 </div>
 
-<!-- Link CSS and JS -->
+{% content_for 'blocks' %}
+
+{% if block %}
 <link rel="stylesheet" href="{{ 'section-inventory.css' | asset_url }}" media="print" onload="this.media='all'">
 <script src="{{ 'section-inventory.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 
 <noscript>
-  <p>This feature requires JavaScript to function properly.</p>
+  <p>This feature requires JavaScript to function properly. Please enable JavaScript in your browser to use this feature.</p>
 </noscript>
 
 
 {% schema %}
 {
   "name": "Quantity Dropdown",
-  "target": "compliance_headbody",
-  "settings": [
+  "blocks": [
     {
-      "type": "text",
-      "id": "custom_text",
-      "label": "Custom Text"
+      "type": "@app",
+      "name": "App Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_text",
+          "label": "Custom Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "blocks": [
+        {
+          "type": "@app"
+        }
+      ]
     }
   ]
 }

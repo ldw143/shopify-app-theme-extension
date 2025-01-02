@@ -18,6 +18,7 @@
     {% endcase %}
   {% endfor %}
 
+  <!-- Optional Custom Text -->
   {% if section.settings.custom_text %}
     <p>{{ section.settings.custom_text }}</p>
   {% endif %}
@@ -33,7 +34,7 @@
 
 {% schema %}
 {
-  "name": "Quantity Selector",
+  "name": "Quantity Selector Section",
   "settings": [
     {
       "type": "text",
@@ -52,38 +53,18 @@
           "label": "Dropdown Label"
         },
         {
-          "type": "select",
+          "type": "text",
           "id": "options",
-"label": "Dropdown Options",
-          "options": [
-            {
-              "value": "1",
-              "label": "1"
-            },
-            {
-              "value": "2",
-              "label": "2"
-            },
-            {
-              "value": "3",
-              "label": "3"
-            },
-            {
-              "value": "4",
-              "label": "4"
-            },
-            {
-              "value": "5",
-              "label": "5"
-            }
-          ]
+          "label": "Dropdown Options (comma-separated)",
+          "default": "1,2,3,4,5"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Default",
+      "name": "Quantity Selector",
+      "category": "Product",
       "blocks": [
         {
           "type": "dropdown"

@@ -17,7 +17,7 @@ api_version = "2024-10"
   [[webhooks.subscriptions]]
   uri = "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/webhooks/shopify"
   compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
-
+  
 [auth]
 redirect_urls = [
   "https://fractional-quantities-app-production-copy--dev-only.gadget.app/api/connections/auth/shopify/callback"

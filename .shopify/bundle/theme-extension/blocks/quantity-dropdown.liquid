@@ -8,8 +8,6 @@
   {% endif %}
 </div>
 
-{% content_for 'blocks' %}
-
 {% if block %}
 <link rel="stylesheet" href="{{ 'section-inventory.css' | asset_url }}" media="print" onload="this.media='all'">
 <script src="{{ 'section-inventory.js' | asset_url }}" defer="defer"></script>
@@ -19,6 +17,13 @@
   <p>This feature requires JavaScript to function properly. Please enable JavaScript in your browser to use this feature.</p>
 </noscript>
 
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when '@app' %}
+      {% render block %}
+    ...
+  {% endcase %}
+{% endfor %}
 
 {% schema %}
 {

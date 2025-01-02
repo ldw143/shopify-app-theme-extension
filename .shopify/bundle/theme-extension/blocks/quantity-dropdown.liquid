@@ -35,12 +35,41 @@
 {% schema %}
 {
   "name": "Quantity Selector Section",
-  "target": "section",
   "settings": [
     {
       "type": "text",
       "id": "custom_text",
       "label": "Custom Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "dropdown",
+      "name": "Quantity Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Dropdown Label"
+        },
+        {
+          "type": "text",
+          "id": "options",
+          "label": "Dropdown Options (comma-separated)",
+          "default": "1,2,3,4,5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quantity Selector",
+      "category": "Product",
+      "blocks": [
+        {
+          "type": "dropdown"
+        }
+      ]
     }
   ]
 }

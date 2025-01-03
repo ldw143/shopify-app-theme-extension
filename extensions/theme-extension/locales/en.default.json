@@ -1,11 +1,19 @@
 {
   "blocks": {
-    "empty_box": {
-      "name": "Empty Box",
+    "empty-box": {
+      "name": "Empty Box with Dropdown",
       "settings": {
         "custom_text": {
           "label": "Custom Text",
-          "default": "This is an empty box."
+          "info": "Text to display inside the box."
+        },
+        "quantity_max": {
+          "label": "Max Quantity",
+          "info": "The maximum number of items that can be selected."
+        },
+        "allow_fractions": {
+          "label": "Allow Fractional Quantities",
+          "info": "Enable dropdown options for fractional quantities (1/4, 1/2, 3/4)."
         }
       }
     }

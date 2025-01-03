@@ -1,11 +1,29 @@
-name: Empty Box Extension
-type: theme
-blocks:
-  - name: Empty Box
-    type: block
-    file_name: blocks/empty-box.liquid
-    settings:
-      - type: text
-        id: custom_text
-        label: Custom Text
-        default: "This is an empty box."
+name: "Empty Box with Quantity Dropdown"
+type: "theme-app-extension"
+metafields:
+  - namespace: custom
+    key: empty_box_settings
+    type: json
+targets:
+  - target: "section"
+    handle: "product"
+    schema:
+      name: "Product Page Blocks"
+      blocks:
+        - type: "empty-box"
+          name: "Empty Box with Dropdown"
+          settings:
+            - type: "text"
+              id: "custom_text"
+              label: "Custom Text"
+              default: "This is an empty box with a dropdown."
+            - type: "number"
+              id: "quantity_max"
+              label: "Max Quantity"
+              default: 10
+            - type: "checkbox"
+              id: "allow_fractions"
+              label: "Allow Fractional Quantities"
+              default: false
+locales:
+  - en

@@ -1,37 +1,34 @@
-<div class="product-information">
-  <h2>{{ section.settings.title }}</h2>
-
-  <!-- Render any app blocks -->
-  {% for block in section.blocks %}
-    {% if block.type == '@app' %}
-      {% render block %}
-    {% else %}
-      <p>Unsupported block type: {{ block.type }}</p>
-    {% endif %}
-  {% endfor %}
+<div class="empty-box" style="width: 100%; height: 100px; border: 1px dashed #ccc;">
+  <!-- Optional text if merchants configure it -->
+  {% if block.settings.custom_text %}
+    <p>{{ block.settings.custom_text }}</p>
+  {% endif %}
 </div>
+
+<!-- CSS for styling -->
+<style>
+  .empty-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+  }
+</style>
+
+<!-- Optional script if needed -->
+<script>
+  console.log('Empty box block loaded');
+</script>
 
 {% schema %}
 {
-  "name": "Product Information",
+  "name": "Empty Box",
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Product Information"
-    }
-  ],
-  "blocks": [
-    {
-    "name": "App Block",
-    "type": "@app"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Product"
+      "id": "custom_text",
+      "label": "Optional Text",
+      "default": "This is an empty box."
     }
   ]
 }

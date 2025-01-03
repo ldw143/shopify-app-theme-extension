@@ -1,5 +1,5 @@
 <div class="product-information">
-  <h2>{{ section.settings.title }}</h2>
+  <h2>{{ block.settings.title }}</h2>
 
   <!-- Render any app blocks -->
   {% for block in section.blocks %}
@@ -14,24 +14,13 @@
 {% schema %}
 {
   "name": "Product Information",
+  "target": "section",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Section Title",
       "default": "Product Information"
-    }
-  ],
-  "blocks": [
-    {
-       "name": "App Block",
-       "type": "@app"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Product"
     }
   ]
 }

@@ -34,13 +34,16 @@
 
 {% schema %}
 {
+  "type": "quantity_selector",
   "name": "Quantity Selector Section",
-  "target": "section",
+<!--  "target": "section",   -->
+  "limit": 1,
   "settings": [
     {
-      "type": "text",
-      "id": "custom_text",
-      "label": "Custom Text"
+    "type": "checkbox",
+    "id": "add_selector",
+    "label": "Add Quantity Selector",
+    "default": true
     }
   ]
 }

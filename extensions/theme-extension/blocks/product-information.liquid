@@ -1,25 +1,31 @@
-<div id="product-information-section">
-  <h2>Product Information</h2>
+<div class="product-information">
+  <h2>{{ section.settings.title }}</h2>
 
-  <!-- Render Section Blocks -->
+  <!-- Render any app blocks -->
   {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'empty_block' %}
-        {% render block %}
-      {% else %}
-        <p>Unsupported block type: {{ block.type }}</p>
-    {% endcase %}
+    {% if block.type == '@app' %}
+      {% render block %}
+    {% else %}
+      <p>Unsupported block type: {{ block.type }}</p>
+    {% endif %}
   {% endfor %}
 </div>
 
 {% schema %}
 {
   "name": "Product Information",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Product Information"
+    }
+  ],
   "blocks": [
     {
-      "type": "empty_block",
-      "name": "Empty Block"
+       "name": "App Block",
+       "type": "@app"
     }
   ],
   "presets": [

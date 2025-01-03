@@ -1,0 +1,32 @@
+<div id="product-information-section">
+  <h2>Product Information</h2>
+
+  <!-- Render Section Blocks -->
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'empty_block' %}
+        {% render block %}
+      {% else %}
+        <p>Unsupported block type: {{ block.type }}</p>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Information",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "empty_block",
+      "name": "Empty Block"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+<div class="product-information">
+  <h2>{{ section.settings.title }}</h2>
+
+  <!-- Render any app blocks -->
+  {% for block in section.blocks %}
+    {% if block.type == '@app' %}
+      {% render block %}
+    {% else %}
+      <p>Unsupported block type: {{ block.type }}</p>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Information",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Product Information"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

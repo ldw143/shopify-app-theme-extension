@@ -1,10 +1,13 @@
 {
-  "ratings": {
-    "stars": {
-      "label": "Ratings"
-    },
-    "home": {
-      "recommendationText": "Recommended Product!"
+  "blocks": {
+    "empty_box": {
+      "name": "Empty Box",
+      "settings": {
+        "custom_text": {
+          "label": "Custom Text",
+          "default": "This is an empty box."
+        }
+      }
     }
   }
 }

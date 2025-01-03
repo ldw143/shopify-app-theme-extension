@@ -1,0 +1,11 @@
+name: Empty Box Extension
+type: theme
+blocks:
+  - name: Empty Box
+    type: block
+    file_name: blocks/empty-box.liquid
+    settings:
+      - type: text
+        id: custom_text
+        label: Custom Text
+        default: "This is an empty box."

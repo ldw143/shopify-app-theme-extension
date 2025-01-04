@@ -1,4 +1,4 @@
-name: "Empty Box with Quantity Dropdown"
+name: "Alternate Quantity Selector"
 type: "theme-app-extension"
 metafields:
   - namespace: custom
@@ -11,7 +11,7 @@ targets:
       name: "Product Page Blocks"
       blocks:
         - type: "empty-box"
-          name: "Empty Box with Dropdown"
+          name: "Alternate Quantity Selector"
           settings:
             - type: "text"
               id: "custom_text"
@@ -24,6 +24,6 @@ targets:
             - type: "checkbox"
               id: "allow_fractions"
               label: "Allow Fractional Quantities"
-              default: false
+              default: true
 locales:
   - en

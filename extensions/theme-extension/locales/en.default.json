@@ -1,7 +1,7 @@
 {
   "blocks": {
     "empty-box": {
-      "name": "Empty Box with Dropdown",
+      "name": "Alternate Quantity Selector",
       "settings": {
         "custom_text": {
           "label": "Custom Text",

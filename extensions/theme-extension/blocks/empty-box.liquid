@@ -6,7 +6,7 @@
 
   <!-- Quantity Dropdown Logic -->
   <div class="quantity-dropdown">
-    <label for="quantity-dropdown-{{ block.id }}">Select Quantity:</label>
+    <label for="quantity-dropdown-{{ block.id }}">Quantity:</label>
     <select id="quantity-dropdown-{{ block.id }}" name="quantity">
       {% for i in (1..block.settings.quantity_max) %}
         <option value="{{ i }}">{{ i }}</option>
@@ -14,9 +14,9 @@
     </select>
 
     {% if block.settings.allow_fractions %}
-      <label for="fraction-dropdown-{{ block.id }}">Select Fraction:</label>
+      <label for="fraction-dropdown-{{ block.id }}"></label>
       <select id="fraction-dropdown-{{ block.id }}" name="fraction">
-        <option value="0">None</option>
+        <option value="0">0</option>
         <option value="1/4">1/4</option>
         <option value="1/2">1/2</option>
         <option value="3/4">3/4</option>
@@ -56,7 +56,7 @@
 
 {% schema %}
 {
-  "name": "Empty Box with Dropdown",
+  "name": "Alternate Quantity Selector",
   "target": "section",
   "settings": [
     {
@@ -75,7 +75,7 @@
       "type": "checkbox",
       "id": "allow_fractions",
       "label": "Allow Fractional Quantities",
-      "default": false
+      "default": true
     }
   ]
 }

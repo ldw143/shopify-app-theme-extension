@@ -1,7 +1,7 @@
 {
   "blocks": {
     "empty-box": {
-      "name": "Alternate Quantity Selector",
+      "name": "Quantity selector",
       "settings": {
         "custom_text": {
           "label": "Custom Text",

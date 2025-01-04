@@ -1,4 +1,4 @@
-name: "Alternate Quantity Selector"
+name: "Quantity selector"
 type: "theme-app-extension"
 metafields:
   - namespace: custom
@@ -11,7 +11,7 @@ targets:
       name: "Product Page Blocks"
       blocks:
         - type: "empty-box"
-          name: "Alternate Quantity Selector"
+          name: "Quantity selector"
           settings:
             - type: "text"
               id: "custom_text"
